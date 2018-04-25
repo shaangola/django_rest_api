@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'paymate.apps.PaymateConfig',
     'rest_framework',
-    'firstrest'
+    'firstrest',
+    'paymateweb'
 ]
 
 MIDDLEWARE = [

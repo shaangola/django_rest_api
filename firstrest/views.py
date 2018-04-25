@@ -1,13 +1,7 @@
-from django.shortcuts import render
-
-
-from django.http import HttpRequest
-from django.shortcuts import get_object_or_404
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from rest_framework import status
-from . models import Employee
-from . serializers import employeeSerializers
+from . serializers import *
+from paymateweb.models import Users
 
 # Create your views here.
 class employeeList(APIView):
@@ -19,3 +13,12 @@ class employeeList(APIView):
 
     def post(self):
         pass
+
+class userList(APIView):
+    def get(self,request):
+        userlist = Users.objects.all()
+        serializer = userSerializers(userlist,many = True)
+        return Response(serializer.data)
+
+
+

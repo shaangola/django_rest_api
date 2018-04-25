@@ -23,4 +23,5 @@ from firstrest import views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^employees/', views.employeeList.as_view()),
+    url(r'^users/', views.userList.as_view()),
 ]
